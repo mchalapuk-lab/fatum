@@ -12,6 +12,4 @@ set (CMAKE_CXX_FLAGS -std=c++0x)
 set (CMAKE_CXX_FLAGS_DEBUG " -g3 -O0 -DDEBUG")
 set (CMAKE_CXX_FLAGS_RELEASE " -O3 -DNDEBUG")
 
-add_subdirectory (src)
 add_subdirectory (test)
-

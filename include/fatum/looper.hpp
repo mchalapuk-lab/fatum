@@ -14,7 +14,7 @@
 
 namespace fatum {
 
-template<class ClockType = steady_clock>
+template<class ClockType = SteadyClock>
 class Looper {
  public:
   typedef std::function<void (std::chrono::microseconds)> MainTask;

@@ -41,10 +41,10 @@ std::chrono::microseconds microsec_cast(std::chrono::duration<Rep, Period> d) {
 
 template<class ClockType>
 void Looper<ClockType>::loop() {
-  auto prev_iter_start = clock_.now();
+  auto prev_iter_start = clock_();
 
   while (true) {
-    auto curr_iter_start = clock_.now();
+    auto curr_iter_start = clock_();
     auto time_delta = curr_iter_start - prev_iter_start;
     prev_iter_start = curr_iter_start;
 
@@ -57,7 +57,7 @@ void Looper<ClockType>::loop() {
     main_task_(microsec_cast(time_delta));
 
     if (min_iter_duration_.count()) {
-      auto curr_iter_end = clock_.now();
+      auto curr_iter_end = clock_();
       auto work_time = curr_iter_end - curr_iter_start;
       event_.work_time_ = microsec_cast(work_time);
       event_.sleep_time_ = min_iter_duration_ - event_.work_time_;
