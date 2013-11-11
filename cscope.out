@@ -1,0 +1,1151 @@
+cscope 15 $HOME/workspace/fatum               0000005638
+	@include/fatum/event.hpp
+
+4 #iâdeà
+FATUM_EVENT_HPP_
+
+
+5 
+	#FATUM_EVENT_HPP_
+
+
+	)
+
+7 
+Çme¥aû
+ 
+	gçtum
+ {
+
+9 
+	sI‹¿tiÚEv’t
+ {
+
+10 
+size_t
+ 
+	g™”©iÚ_
+;
+
+11 
+	g¡d
+::
+chrÚo
+::
+miüo£cÚds
+ 
+wÜk_time_
+;
+
+12 
+	g¡d
+::
+chrÚo
+::
+miüo£cÚds
+ 
+¦“p_time_
+;
+
+	@include/fatum/fwd/handler.hpp
+
+4 #iâdeà
+FATUM_FWD_HANDLER_HPP_
+
+
+5 
+	#FATUM_FWD_HANDLER_HPP_
+
+
+	)
+
+7 
+Çme¥aû
+ 
+	gçtum
+ {
+
+9 
+şass
+ 
+	gHªdËr
+;
+
+	@include/fatum/handler.hpp
+
+4 #iâdeà
+FATUM_HANDLER_HPP_
+
+
+5 
+	#FATUM_HANDLER_HPP_
+
+
+	)
+
+7 
+	~"çtum/loİ”.hµ
+"
+
+9 
+Çme¥aû
+ 
+	gçtum
+ {
+
+11 şas 
+	cHªdËr
+ {
+
+12 
+	gpublic
+:
+
+13 
+HªdËr
+(
+Loİ”
+ &
+loİ”
+)
+
+14 : 
+loİ”_
+(
+loİ”
+) {
+
+16 
+po¡
+(
+Loİ”
+::
+Task
+ 
+sk
+) {
+
+17 
+loİ”_
+.
+’queue
+(
+sk
+);
+
+19 
+	g´iv©e
+:
+
+20 
+Loİ”
+ &
+loİ”_
+;
+
+	@include/fatum/looper.hpp
+
+4 #iâdeà
+FATUM_LOOPER_HPP_
+
+
+5 
+	#FATUM_LOOPER_HPP_
+
+
+	)
+
+7 
+	~<deque
+>
+
+8 
+	~<cÚd™iÚ_v¬ŸbË
+>
+
+9 
+	~<mu‹x
+>
+
+11 
+	~"çtum/fwd/hªdËr.hµ
+"
+
+12 
+	~"çtum/ev’t.hµ
+"
+
+14 
+Çme¥aû
+ 
+	gçtum
+ {
+
+16 şas 
+	cLoİ”
+ {
+
+17 
+	gpublic
+:
+
+18 
+¡d
+::
+	tfunùiÚ
+<(
+	t¡d
+::
+	tchrÚo
+::
+	tmiüo£cÚds
+)> 
+	tMašTask
+;
+
+19 
+	g¡d
+::
+	tfunùiÚ
+<()> 
+	tExŒaTask
+;
+
+20 
+	g¡d
+::
+	tfunùiÚ
+<(
+	tçtum
+::
+	tI‹¿tiÚEv’t
+ cÚ¡&)> 
+	tLi¡’”
+;
+
+22 
+Loİ”
+(
+size_t
+ 
+mš_äeq
+ = 60,
+
+23 
+size_t
+ 
+max_äeq
+ = 60,
+
+24 
+Li¡’”
+ cÚ¡& 
+li¡’”
+ = [] (
+çtum
+::
+I‹¿tiÚEv’t
+ const&) {}) :
+
+25 
+mš_™”_du¿tiÚ_
+(
+äeqToI‹rDu¿tiÚ
+(
+max_äeq
+)),
+
+26 
+max_™”_du¿tiÚ_
+(
+äeqToI‹rDu¿tiÚ
+(
+mš_äeq
+)),
+
+27 
+li¡’”_
+(
+li¡’”
+),
+
+28 
+	gev’t_
+{0,
+
+29 
+	g¡d
+::
+chrÚo
+::
+miüo£cÚds
+::
+z”o
+(),
+
+30 
+	g¡d
+::
+chrÚo
+::
+miüo£cÚds
+::
+z”o
+()} {
+
+32 
+Loİ”
+(Loİ” cÚ¡&èğ
+d–‘e
+;
+
+34 
+£tMšF»qu’cy
+(
+size_t
+ 
+hz
+) {
+
+35 
+’queue
+([
+this
+, 
+hz
+] { 
+max_™”_du¿tiÚ_
+ = 
+äeqToI‹rDu¿tiÚ
+(hz); });
+
+37 
+£tMaxF»qu’cy
+(
+size_t
+ 
+hz
+) {
+
+38 
+’queue
+([
+this
+, 
+hz
+] { 
+mš_™”_du¿tiÚ_
+ = 
+äeqToI‹rDu¿tiÚ
+(hz); });
+
+41 
+´•¬e
+();
+
+42 
+İ”©Ü
+(è(
+MašTask
+ 
+	gsk
+);
+
+43 
+	g´iv©e
+:
+
+44 
+¡d
+::
+	tchrÚo
+::
+	t¡—dy_şock
+ 
+	tClockTy³
+;
+
+46 
+	g¡d
+::
+mu‹x
+ 
+mu‹x_
+;
+
+47 
+	g¡d
+::
+cÚd™iÚ_v¬ŸbË
+ 
+loİ_¡¬t_
+;
+
+48 
+	g¡d
+::
+cÚd™iÚ_v¬ŸbË
+ 
+loİ_´•¬ed_
+;
+
+50 
+	g¡d
+::
+deque
+<
+ExŒaTask
+> 
+sk_queue_
+;
+
+51 
+MašTask
+ 
+	gmaš_sk_
+;
+
+53 
+	g¡d
+::
+chrÚo
+::
+miüo£cÚds
+ 
+mš_™”_du¿tiÚ_
+;
+
+54 
+	g¡d
+::
+chrÚo
+::
+miüo£cÚds
+ 
+max_™”_du¿tiÚ_
+;
+
+55 
+Li¡’”
+ 
+	gli¡’”_
+;
+
+56 
+I‹¿tiÚEv’t
+ 
+	gev’t_
+;
+
+58 
+’queue
+(
+ExŒaTask
+ 
+sk
+) {
+
+59 
+	g¡d
+::
+lock_gu¬d
+<
+¡d
+::
+mu‹x
+> 
+lock
+(
+mu‹x_
+);
+
+60 
+	gsk_queue_
+.
+push_back
+(
+sk
+);
+
+62 
+size_t
+ 
+g‘TaskCouÁ
+() {
+
+63 
+	g¡d
+::
+lock_gu¬d
+<
+¡d
+::
+mu‹x
+> 
+lock
+(
+mu‹x_
+);
+
+64  
+	gsk_queue_
+.
+size
+();
+
+67 
+	g¡d
+::
+chrÚo
+::
+miüo£cÚds
+ 
+äeqToI‹rDu¿tiÚ
+(
+size_t
+ 
+hz
+) {
+
+68 ià(!
+hz
+) {
+
+69  
+¡d
+::
+chrÚo
+::
+miüo£cÚds
+::
+z”o
+();
+
+71 cÚ¡ 
+	g¡d
+::
+chrÚo
+::
+miüo£cÚds
+ 
+Úe_£cÚd
+ = 
+¡d
+::chrÚo::
+£cÚds
+(1);
+
+72 
+	g¡d
+::
+chrÚo
+::
+miüo£cÚds
+ 
+du¿tiÚ
+ = 
+Úe_£cÚd
+ / 
+hz
+;
+
+73  
+	gdu¿tiÚ
+;
+
+76 
+loİ
+();
+
+78 
+ä›nd
+ 
+şass
+ 
+	gHªdËr
+;
+
+	@src/looper.cpp
+
+4 
+	~"çtum/loİ”.hµ
+"
+
+6 
+	~<th»ad
+>
+
+8 
+Çme¥aû
+ 
+	gçtum
+ {
+
+10 
+	gLoİ”
+::
+´•¬e
+() {
+
+12 
+¡d
+::
+unique_lock
+<¡d::
+mu‹x
+> 
+lock
+(
+mu‹x_
+);
+
+13 ià(!
+	gmaš_sk_
+) {
+
+14 
+	gloİ_¡¬t_
+.
+wa™
+(
+lock
+);
+
+16 
+	gev’t_
+.
+	g™”©iÚ_
+ = 1;
+
+17 
+	gloİ_´•¬ed_
+.
+nÙify_Úe
+();
+
+19 
+loİ
+();
+
+22 
+	gLoİ”
+::
+İ”©Ü
+(è(
+MašTask
+ 
+sk
+) {
+
+23 
+¡d
+::
+unique_lock
+<¡d::
+mu‹x
+> 
+lock
+(
+mu‹x_
+);
+
+24 
+	gmaš_sk_
+ = 
+sk
+;
+
+25 
+	gloİ_¡¬t_
+.
+nÙify_Úe
+();
+
+27 ià(!
+	gev’t_
+.
+	g™”©iÚ_
+) {
+
+28 
+	gloİ_´•¬ed_
+.
+wa™
+(
+lock
+);
+
+32 
+	g‹m¶©e
+ <
+şass
+ 
+	gR•
+, cÏs 
+	gP”iod
+>
+
+33 
+	g¡d
+::
+chrÚo
+::
+miüo£cÚds
+ 
+miüo£c_ÿ¡
+(
+¡d
+::chrÚo::
+du¿tiÚ
+<
+R•
+, 
+P”iod
+> 
+d
+) {
+
+34  
+	g¡d
+::
+chrÚo
+::
+du¿tiÚ_ÿ¡
+<
+¡d
+::chrÚo::
+miüo£cÚds
+>(
+d
+);
+
+37 
+	gLoİ”
+::
+loİ
+() {
+
+38 autØ
+´ev_™”_¡¬t
+ = 
+ClockTy³
+::
+now
+();
+
+40 
+	gŒue
+) {
+
+41 autØ
+	gcu¼_™”_¡¬t
+ = 
+ClockTy³
+::
+now
+();
+
+42 autØ
+	gtime_d–
+ = 
+cu¼_™”_¡¬t
+ - 
+´ev_™”_¡¬t
+;
+
+43 
+	g´ev_™”_¡¬t
+ = 
+cu¼_™”_¡¬t
+;
+
+45 
+size_t
+ 
+	gsk_couÁ
+ = 
+g‘TaskCouÁ
+();
+
+46 
+	gsk_couÁ
+--) {
+
+47 
+	gsk_queue_
+.
+äÚt
+()();
+
+48 
+	g¡d
+::
+lock_gu¬d
+<
+¡d
+::
+mu‹x
+> 
+lock
+(
+mu‹x_
+);
+
+49 
+	gsk_queue_
+.
+pİ_äÚt
+();
+
+51 
+maš_sk_
+(
+miüo£c_ÿ¡
+(
+time_d–
+));
+
+53 ià(
+	gmš_™”_du¿tiÚ_
+.
+couÁ
+()) {
+
+54 autØ
+	gcu¼_™”_’d
+ = 
+ClockTy³
+::
+now
+();
+
+55 autØ
+	gwÜk_time
+ = 
+cu¼_™”_’d
+ - 
+cu¼_™”_¡¬t
+;
+
+56 
+	gev’t_
+.
+	gwÜk_time_
+ = 
+miüo£c_ÿ¡
+(
+wÜk_time
+);
+
+57 
+	gev’t_
+.
+	g¦“p_time_
+ = 
+mš_™”_du¿tiÚ_
+ - 
+ev’t_
+.
+wÜk_time_
+;
+
+59 
+li¡’”_
+(
+ev’t_
+);
+
+60 
+	g¡d
+::
+this_th»ad
+::
+¦“p_fÜ
+(
+ev’t_
+.
+¦“p_time_
+);
+
+62 
+	gev’t_
+.
+	g™”©iÚ_
+ += 1;
+
+	@test/looper_test.cpp
+
+4 
+	~"çtum/loİ”.hµ
+"
+
+6 
+	~<gmock/gmock.h
+>
+
+7 
+	~<g‹¡/g‹¡.h
+>
+
+9 
+	~<th»ad
+>
+
+11 
+Çme¥aû
+ 
+	g‹¡
+ {
+
+13 
+	sMockLi¡’”
+ {
+
+14 
+MOCK_METHOD1
+(
+ÿÎ
+, (
+çtum
+::
+I‹¿tiÚEv’t
+ const&));
+
+16 
+İ”©Ü
+(è(
+	gçtum
+::
+I‹¿tiÚEv’t
+ cÚ¡& 
+evt
+) {
+
+17 
+ÿÎ
+(
+evt
+);
+
+21 
+	sMockMašTask
+ {
+
+22 
+MOCK_METHOD1
+(
+ÿÎ
+, (
+¡d
+::
+chrÚo
+::
+miüo£cÚds
+));
+
+24 
+İ”©Ü
+(è(
+	g¡d
+::
+chrÚo
+::
+miüo£cÚds
+ 
+time_d–
+) {
+
+25 
+ÿÎ
+(
+time_d–
+);
+
+29 
+	g‹m¶©e
+ <
+	gşass
+ ...
+	gArgTy³s
+, 
+şass
+ 
+	gFunùÜTy³
+>
+
+30 
+	g¡d
+::
+funùiÚ
+<(
+ArgTy³s
+...)> 
+w¿p
+(
+FunùÜTy³
+ &
+funùÜ
+) {
+
+31  [&
+funùÜ
+] (
+ArgTy³s
+ ...
+¬gs
+) { functor(args...); };
+
+36 
+usšg
+ 
+Çme¥aû
+ 
+	g‹¡
+;
+
+37 
+usšg
+ 
+Çme¥aû
+ 
+	g‹¡šg
+;
+
+39 
+	$TEST
+(
+çtum_Loİ”
+, 
+‹¡_maš_sk_ÿÎed
+) {
+
+40 
+çtum
+::
+Loİ”
+ 
+‹¡ed_loİ
+;
+
+42 
+¡d
+::
+th»ad
+ 
+	`loİ”_th»ad
+(
+
+43 [&
+‹¡ed_loİ
+] () {
+
+44 
+Œy
+ {
+
+45 
+‹¡ed_loİ
+.
+	`´•¬e
+();
+
+46 } 
+	`ÿtch
+ (const*) {
+
+51 
+MockMašTask
+ 
+mock_sk
+;
+
+52 
+	`EXPECT_CALL
+(
+mock_sk
+, 
+	`ÿÎ
+(
+_
+))
+
+53 .
+	`WlOnû
+(
+	`Throw
+("exception"));
+
+55 
+	`‹¡ed_loİ
+(
+w¿p
+<
+¡d
+::
+chrÚo
+::
+miüo£cÚds
+>(
+mock_sk
+));
+
+56 
+loİ”_th»ad
+.
+	`još
+();
+
+57 
+	}
+}
+
+	@test/tests.cpp
+
+1 
+	~"g‹¡/g‹¡.h
+"
+
+2 
+	~"gmock/gmock.h
+"
+
+4 
+	$maš
+(
+¬gc
+, ** 
+¬gv
+) {
+
+5 ::
+‹¡šg
+::
+	`In™GoogËMock
+(&
+¬gc
+, 
+¬gv
+);
+
+6  
+	`RUN_ALL_TESTS
+();
+
+7 
+	}
+}
+
+	@
+1
+.
+1
+/usr/include
+7
+156
+include/fatum/event.hpp
+include/fatum/fwd/handler.hpp
+include/fatum/handler.hpp
+include/fatum/looper.hpp
+src/looper.cpp
+test/looper_test.cpp
+test/tests.cpp

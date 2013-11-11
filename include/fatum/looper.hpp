@@ -10,9 +10,11 @@
 
 #include "fatum/fwd/handler.hpp"
 #include "fatum/event.hpp"
+#include "fatum/steady_clock.hpp"
 
 namespace fatum {
 
+template<class ClockType = steady_clock>
 class Looper {
  public:
   typedef std::function<void (std::chrono::microseconds)> MainTask;
@@ -41,7 +43,7 @@ class Looper {
   void prepare();
   void operator() (MainTask task);
  private:
-  typedef std::chrono::steady_clock ClockType;
+  ClockType clock_;
 
   std::mutex mutex_;
   std::condition_variable loop_start_;
@@ -79,6 +81,8 @@ class Looper {
 }; // class Looper
 
 } // namespace fatum
+
+#include "fatum/impl/looper.tpp"
 
 #endif // include guard
 

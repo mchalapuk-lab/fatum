@@ -37,7 +37,7 @@ using namespace test;
 using namespace testing;
 
 TEST(fatum_Looper, test_main_task_called) {
-  fatum::Looper tested_loop;
+  fatum::Looper<> tested_loop;
 
   std::thread looper_thread(
       [&tested_loop] () {
