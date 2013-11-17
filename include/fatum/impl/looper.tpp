@@ -10,8 +10,8 @@ static_assert(false, "Use looper.hpp");
 
 namespace fatum {
 
-template<class ClockType>
-void Looper<ClockType>::prepare() {
+template<class ClockType, class MainTask, class ExtraTask>
+void Looper<ClockType, MainTask, ExtraTask>::prepare() {
   {
     std::unique_lock<std::mutex> lock(mutex_);
     if (!main_task_) {
@@ -23,8 +23,8 @@ void Looper<ClockType>::prepare() {
   loop();
 }
 
-template<class ClockType>
-void Looper<ClockType>::operator() (MainTask task) {
+template<class ClockType, class MainTask, class ExtraTask>
+void Looper<ClockType, MainTask, ExtraTask>::operator() (MainTask task) {
   std::unique_lock<std::mutex> lock(mutex_);
   main_task_ = task;
   loop_start_.notify_one();
@@ -39,8 +39,8 @@ std::chrono::microseconds microsec_cast(std::chrono::duration<Rep, Period> d) {
   return std::chrono::duration_cast<std::chrono::microseconds>(d);
 }
 
-template<class ClockType>
-void Looper<ClockType>::loop() {
+template<class ClockType, class MainTask, class ExtraTask>
+void Looper<ClockType, MainTask, ExtraTask>::loop() {
   auto prev_iter_start = clock_();
 
   while (true) {

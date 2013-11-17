@@ -14,11 +14,11 @@
 
 namespace fatum {
 
-template<class ClockType = SteadyClock>
+template<class ClockType = SteadyClock, 
+class MainTask = std::function<void (std::chrono::microseconds)>,
+class ExtraTask = std::function<void ()>>
 class Looper {
  public:
-  typedef std::function<void (std::chrono::microseconds)> MainTask;
-  typedef std::function<void ()> ExtraTask;
   typedef std::function<void (fatum::IterationEvent const&)> Listener;
 
   Looper(size_t min_freq = 60,
