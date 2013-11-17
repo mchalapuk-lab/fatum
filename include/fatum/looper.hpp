@@ -7,7 +7,6 @@
 #include <deque>
 #include <condition_variable>
 #include <mutex>
-#include <thread>
 
 #include "fatum/fwd/handler.hpp"
 #include "fatum/event.hpp"
@@ -15,11 +14,11 @@
 
 namespace fatum {
 
-template<class ClockType = SteadyClock, 
-class MainTask = std::function<void (std::chrono::microseconds)>, 
-class ExtraTask = std::function<void ()>>
+template<class ClockType = SteadyClock>
 class Looper {
  public:
+  typedef std::function<void (std::chrono::microseconds)> MainTask;
+  typedef std::function<void ()> ExtraTask;
   typedef std::function<void (fatum::IterationEvent const&)> Listener;
 
   Looper(size_t min_freq = 60,
@@ -41,28 +40,8 @@ class Looper {
     enqueue([this, hz] { min_iter_duration_ = freqToIterDuration(hz); });
   }
 
-  void prepare() {
-    {
-      std::unique_lock<std::mutex> lock(mutex_);
-      if (!main_task_) {
-        loop_start_.wait(lock);
-      }
-      event_.iteration_ = 1;
-      loop_prepared_.notify_one();  
-    }
-    loop();
-  }
-
-  void operator() (MainTask task) {
-    std::unique_lock<std::mutex> lock(mutex_);
-    main_task_ = task;
-    loop_start_.notify_one();
-
-    if (!event_.iteration_) {
-      loop_prepared_.wait(lock);
-    }
-  }
-
+  void prepare();
+  void operator() (MainTask task);
  private:
   ClockType clock_;
 
@@ -96,44 +75,14 @@ class Looper {
     return duration;
   }
 
-  template <class Rep, class Period> 
-  std::chrono::microseconds microsec_cast(std::chrono::duration<Rep, Period> d) {
-    return std::chrono::duration_cast<std::chrono::microseconds>(d);
-  }
-
-  void loop() {
-    auto prev_iter_start = clock_();
-    
-    while (true) {
-      auto curr_iter_start = clock_();
-      auto time_delta = curr_iter_start - prev_iter_start;
-      prev_iter_start = curr_iter_start;
-      size_t task_count = getTaskCount();
-      
-      while (task_count--) {
-        task_queue_.front()();
-        std::lock_guard<std::mutex> lock(mutex_);
-        task_queue_.pop_front();
-      }
-      main_task_(microsec_cast(time_delta));
-
-      if (min_iter_duration_.count()) {
-        auto curr_iter_end = clock_();
-        auto work_time = curr_iter_end - curr_iter_start;
-        event_.work_time_ = microsec_cast(work_time);
-        event_.sleep_time_ = min_iter_duration_ - event_.work_time_;
-
-        listener_(event_);
-        std::this_thread::sleep_for(event_.sleep_time_);
-      }
-      event_.iteration_ += 1;
-    }
-  }
+  void loop();
 
   friend class Handler;
 }; // class Looper
 
 } // namespace fatum
+
+#include "fatum/impl/looper.tpp"
 
 #endif // include guard
 
