@@ -40,14 +40,13 @@ class Looper {
     enqueue([this, hz] { min_iter_duration_ = freqToIterDuration(hz); });
   }
 
-  void prepare();
-  void operator() (MainTask task);
+  void operator() ();
+  void prepare(MainTask task);
  private:
   ClockType clock_;
 
   std::mutex mutex_;
   std::condition_variable loop_start_;
-  std::condition_variable loop_prepared_;
 
   std::deque<ExtraTask> task_queue_;
   MainTask main_task_;

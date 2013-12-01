@@ -11,27 +11,22 @@ static_assert(false, "Use looper.hpp");
 namespace fatum {
 
 template<class ClockType, class MainTask, class ExtraTask>
-void Looper<ClockType, MainTask, ExtraTask>::prepare() {
+void Looper<ClockType, MainTask, ExtraTask>::operator() () {
   {
     std::unique_lock<std::mutex> lock(mutex_);
     if (!main_task_) {
       loop_start_.wait(lock);
     }
     event_.iteration_ = 1;
-    loop_prepared_.notify_one();
   }
   loop();
 }
 
 template<class ClockType, class MainTask, class ExtraTask>
-void Looper<ClockType, MainTask, ExtraTask>::operator() (MainTask task) {
+void Looper<ClockType, MainTask, ExtraTask>::prepare(MainTask task) {
   std::unique_lock<std::mutex> lock(mutex_);
   main_task_ = task;
   loop_start_.notify_one();
-
-  if (!event_.iteration_) {
-    loop_prepared_.wait(lock);
-  }
 }
 
 template <class Rep, class Period>
