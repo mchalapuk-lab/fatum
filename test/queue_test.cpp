@@ -69,9 +69,28 @@ TYPED_TEST_P(fatum_Queue, test_3_pushed_items_can_be_pulled) {
   ASSERT_TRUE(popped_items.find(tested_item2) != popped_items.end());
 }
 
+TYPED_TEST_P(fatum_Queue, test_2_items_pushed_with_one_call_can_be_pulled) {
+  typename TypeParam::QueueType tested_queue;
+  typename TypeParam::ItemFactoryType create_item;
+
+  auto tested_item0 = create_item();
+  auto tested_item1 = create_item();
+  tested_queue.push(tested_item0, tested_item1);
+
+  typedef typename TypeParam::ItemType ItemType;
+  std::set<ItemType> popped_items;
+  tested_queue.pop([&popped_items](ItemType &item) {
+		    popped_items.insert(item);
+		  });
+
+  ASSERT_TRUE(popped_items.find(tested_item0) != popped_items.end());
+  ASSERT_TRUE(popped_items.find(tested_item1) != popped_items.end());
+}
+
 REGISTER_TYPED_TEST_CASE_P(fatum_Queue,
                            test_pushed_item_can_be_pulled,
-                           test_3_pushed_items_can_be_pulled);
+                           test_3_pushed_items_can_be_pulled,
+                           test_2_items_pushed_with_one_call_can_be_pulled);
 
 typedef ::testing::Types<
     TypeParam<fatum::queue::Blocking<int>, IntFactory>
