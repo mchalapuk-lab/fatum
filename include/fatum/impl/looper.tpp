@@ -3,7 +3,7 @@
 // vim: ts=2 sw=2 expandtab
 
 #ifndef FATUM_LOOPER_HPP_
-static_assert(false, "Use looper.hpp");
+#error "Use looper.hpp"
 #endif 
 
 #include <thread>
